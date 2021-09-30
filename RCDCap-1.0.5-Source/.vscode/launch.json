@@ -1,0 +1,65 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "(gdb) Launch",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/RCDCap-Ninja-build/src/rcdcap",
+            "args": ["--disable-memory-locking", "--erspan", "--tap-persist", "--tap-device", "mon1"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "(gdb) Launch read (discard)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/RCDCap-Ninja-build/src/rcdcap",
+            "args": ["--disable-memory-locking", "-r", "~/erspan1.pcap", "-D", "-R"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "(gdb) Launch read (tap)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/RCDCap-Ninja-build/src/rcdcap",
+            "args": ["--disable-memory-locking", "-r", "~/erspan1.pcap", "--erspan", "--tap-persist", "--tap-device", "mon1"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        }
+    ]
+}
